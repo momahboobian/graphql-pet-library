@@ -1,3 +1,14 @@
+type Pet {
+  id: ID!
+  name: String!
+  status: PetStatus!
+}
+enum PetStatus {
+  AVAILABLE
+  CHECKEDOUT
+}
+
 type Query {
-  gnar: String!
+  totalPets: Int!
+  allPets: [Pet!]!
 }
