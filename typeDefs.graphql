@@ -1,14 +1,35 @@
+## Create a type called Customer
+## Add 3 or more fields 2 that Customer
+## Extra credit: Add 2 queries for the Customer
+
+"""
+This is the main tye for the Cat
+"""
 type Pet {
   id: ID!
   name: String!
   status: PetStatus!
 }
+
 enum PetStatus {
   AVAILABLE
   CHECKEDOUT
 }
-
+"""
+This is the main type for the Customers
+"""
 type Query {
   totalPets: Int!
   allPets: [Pet!]!
+  getPet(id: ID!): Pet!
+}
+enum CustomerStatus {
+  ACTIVE
+  INACTIVE
+}
+
+type Customer {
+  d: ID
+  name: String!
+  status: CustomerStatus!
 }
