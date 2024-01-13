@@ -2,13 +2,18 @@
 ## Add 3 or more fields 2 that Customer
 ## Extra credit: Add 2 queries for the Customer
 
-"""
-This is the main tye for the Cat
-"""
 type Pet {
   id: ID!
   name: String!
   status: PetStatus!
+  inCareOF: Customer!
+}
+
+type Customer {
+  d: ID
+  name: String!
+  status: CustomerStatus!
+  currentPets: [Pet!]!
 }
 
 enum PetStatus {
@@ -27,10 +32,4 @@ type Query {
 enum CustomerStatus {
   ACTIVE
   INACTIVE
-}
-
-type Customer {
-  d: ID
-  name: String!
-  status: CustomerStatus!
 }
