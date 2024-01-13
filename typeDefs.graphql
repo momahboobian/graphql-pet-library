@@ -15,14 +15,15 @@ enum PetStatus {
   AVAILABLE
   CHECKEDOUT
 }
-"""
-This is the main type for the Customers
-"""
+
 type Query {
   totalPets: Int!
   allPets: [Pet!]!
   getPet(id: ID!): Pet!
+  getCustomer(status: CustomerStatus): Customer!
+  totalCustomers: Int
 }
+
 enum CustomerStatus {
   ACTIVE
   INACTIVE
